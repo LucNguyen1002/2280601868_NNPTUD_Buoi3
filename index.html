@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🛍️ Product Dashboard</h1>
+
+      <!-- Search Box -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="🔍 Tìm kiếm theo tên sản phẩm..."
+          oninput="handleSearch(this.value)"
+        />
+      </div>
+
+      <div id="tableContainer">
+        <div class="loading">Đang tải dữ liệu...</div>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div
+        class="pagination-container"
+        id="paginationContainer"
+        style="display: none"
+      >
+        <div class="page-size-selector">
+          <label for="pageSize">Hiển thị:</label>
+          <select id="pageSize" onchange="changePageSize(this.value)">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+          <span>sản phẩm/trang</span>
+        </div>
+        <div class="pagination-info" id="paginationInfo"></div>
+        <div class="pagination-buttons" id="paginationButtons"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
